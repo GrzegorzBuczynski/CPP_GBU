@@ -6,7 +6,7 @@
 #    By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 17:20:02 by gbuczyns          #+#    #+#              #
-#    Updated: 2024/12/29 16:22:03 by gbuczyns         ###   ########.fr        #
+#    Updated: 2024/12/29 18:57:03 by gbuczyns         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ RM = rm -f
 
 NAME = phonebook
 
-SRCS =	srcs\PhoneBook.cpp \
-		srcs\Contact.cpp \
-		srcs\main.cpp
+SRCS =	PhoneBook.cpp \
+		Contact.cpp \
+		main.cpp
 		
 OBJS_DIR = objs
 OBJS = $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRCS))
