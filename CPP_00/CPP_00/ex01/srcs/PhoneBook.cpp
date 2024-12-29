@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 20:44:37 by gbuczyns          #+#    #+#             */
-/*   Updated: 2024/12/29 18:39:31 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2024/12/29 19:25:53 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void PhoneBook::searchContacts() const
         std::cout << std::setw(10) << (contacts[i].getLastName().length() > 10 ? contacts[i].getLastName().substr(0, 9) + "." : contacts[i].getLastName()) << "|";
         std::cout << std::setw(10) << (contacts[i].getNickname().length() > 10 ? contacts[i].getNickname().substr(0, 9) + "." : contacts[i].getNickname()) << std::endl;
 	}
+    std::cout << std::endl;
 }
 
 void PhoneBook::displayContact(int index) const
