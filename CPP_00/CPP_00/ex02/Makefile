@@ -6,7 +6,7 @@
 #    By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 17:20:02 by gbuczyns          #+#    #+#              #
-#    Updated: 2024/12/29 18:57:03 by gbuczyns         ###   ########.fr        #
+#    Updated: 2024/12/30 16:51:26 by gbuczyns         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,11 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -Iinclude
 RM = rm -f
 
-NAME = phonebook
+NAME = test
 
-SRCS =	PhoneBook.cpp \
-		Contact.cpp \
-		main.cpp
-		
+SRCS = $(wildcard srcs/*.cpp)	
 OBJS_DIR = objs
-OBJS = $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRCS))
+OBJS = $(patsubst srcs/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
 
 all: 
 	@$(MAKE) -s $(NAME)
@@ -51,3 +48,7 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+run: all
+	./$(NAME) > output.log
+	cat output.log
