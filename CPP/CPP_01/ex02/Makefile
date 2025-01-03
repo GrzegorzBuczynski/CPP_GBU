@@ -6,7 +6,7 @@
 #    By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 17:20:02 by gbuczyns          #+#    #+#              #
-#    Updated: 2025/01/02 17:15:40 by gbuczyns         ###   ########.fr        #
+#    Updated: 2025/01/03 17:43:08 by gbuczyns         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,5 +50,3 @@ re: fclean all
 .PHONY: all clean fclean re
 
 run: all
-	./$(NAME) > output.log
-	cat output.log
