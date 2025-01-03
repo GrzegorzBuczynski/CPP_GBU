@@ -6,7 +6,9 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 17:37:00 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/03 17:37:01 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:55:15 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "Harl.hpp"
+# include <iostream>
