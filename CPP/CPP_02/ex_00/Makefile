@@ -14,7 +14,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -Iinclude
 RM = rm -f
 
-NAME = harlFilter
+NAME = Fixed
 
 SRCS = $(wildcard srcs/*.cpp)	
 OBJS_DIR = objs
