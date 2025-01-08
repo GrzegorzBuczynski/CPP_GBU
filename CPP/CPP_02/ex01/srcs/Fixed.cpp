@@ -2,7 +2,7 @@
 
 #include "Fixed.hpp"
 # include <iostream>
-
+#include <cmath>
 
 Fixed::Fixed() : _fixedPointValue(0) 
 {
@@ -47,7 +47,7 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return this->_fixedPointValue;
 }
 
