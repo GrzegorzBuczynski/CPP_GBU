@@ -1,7 +1,9 @@
 
 # include "Point.hpp"
 
-
+// return positive if point is on the right side of the line
+// return negative if point is on the left side of the line
+// return 0 if point is on the line
 static Fixed sign(Point const p1, Point const p2, Point const p3) 
 {
     return (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) - (p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
