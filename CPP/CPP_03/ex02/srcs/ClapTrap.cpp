@@ -24,6 +24,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         attackDamage = other.attackDamage;
     }
     std::cout << "ClapTrap " << name << " assigned!" << std::endl;
+    return *this;
 }
 
 ClapTrap::~ClapTrap()
