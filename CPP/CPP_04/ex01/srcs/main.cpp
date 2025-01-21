@@ -1,19 +1,34 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+# include "Animal.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
 
-int main()
+
+int main() 
 {
-    ScavTrap scavTrap("LLU");
+    const Animal* animals[10];
 
-    scavTrap.attack("Target1");
-    scavTrap.takeDamage(10);
-    scavTrap.beRepaired(5);
+    for (int i = 0; i < 5; ++i) 
+        animals[i] = new Dog();
+    
+    for (int i = 5; i < 10; ++i) 
+        animals[i] = new Cat();
 
-    scavTrap.attack("Target2");
-    scavTrap.takeDamage(100);
-    scavTrap.beRepaired(50);
+    for (int i = 0; i < 10; ++i) 
+        delete animals[i];
 
-    scavTrap.guardGate();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j; 
+    delete i;
+
+    //Deep copy test
+    Dog originalDog;
+    Dog copiedDog = originalDog;
+    copiedDog.makeSound();
+
+    Cat originalCat;
+    Cat copiedCat = originalCat;
+    copiedCat.makeSound();
 
     return 0;
 }
