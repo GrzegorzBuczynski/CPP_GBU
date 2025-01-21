@@ -14,7 +14,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -Iinclude
 RM = rm -f
 
-NAME = Trap01
+NAME = ex01
 
 SRCS = $(wildcard srcs/*.cpp)	
 OBJS_DIR = objs
