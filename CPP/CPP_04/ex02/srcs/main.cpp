@@ -1,23 +1,34 @@
-# include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
-# include "FragTrap.hpp"
+# include "Animal.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
+
 
 int main() 
 {
-    FragTrap fragtrap("ABC");
+    const Animal* animals[10];
 
-    // Actions
-    fragtrap.attack("Target1");
-    fragtrap.takeDamage(42);
-    fragtrap.beRepaired(21);
+    for (int i = 0; i < 5; ++i) 
+        animals[i] = new Dog();
     
-    // More actions
-    fragtrap.attack("Target2");
-    fragtrap.takeDamage(600);
-    fragtrap.beRepaired(20);
+    for (int i = 5; i < 10; ++i) 
+        animals[i] = new Cat();
 
-    // Special ability
-    fragtrap.highFivesGuys();
+    for (int i = 0; i < 10; ++i) 
+        delete animals[i];
+
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j; 
+    delete i;
+
+    //Deep copy test
+    Dog originalDog;
+    Dog copiedDog = originalDog;
+    copiedDog.makeSound();
+
+    Cat originalCat;
+    Cat copiedCat = originalCat;
+    copiedCat.makeSound();
 
     return 0;
 }
