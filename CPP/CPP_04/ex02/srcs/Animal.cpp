@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:19:00 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/22 14:19:01 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:37:38 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,4 @@ Animal::~Animal()
 std::string Animal::getType() const
 {
     return type;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "Animal sound" << std::endl;
 }

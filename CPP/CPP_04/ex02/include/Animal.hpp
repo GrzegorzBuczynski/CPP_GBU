@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:18:16 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/22 14:18:17 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:38:34 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
         virtual ~Animal();
 
         std::string getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 };
 
 #endif
