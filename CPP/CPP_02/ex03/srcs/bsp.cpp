@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:11:40 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 15:11:36 by gbuczyns         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 # include "Point.hpp"
 
@@ -11,14 +22,14 @@ static Fixed sign(Point const p1, Point const p2, Point const p3)
 
 static bool isPointOnEdge(Point const p1, Point const p2, Point const point) 
 {
-    Fixed crossProduct = (point.getY() - p1.getY()) * (p2.getX() - p1.getX()) - (point.getX() - p1.getX()) * (p2.getY() - p1.getY());
-    if (crossProduct != Fixed(0)) 
+    Fixed crossProduct = (point.getY() - p1.getY()) * (p2.getX() - p1.getX()) - (point.getX() - p1.getX()) * (p2.getY() - p1.getY()); //crossProduct is the z component of the cross product of two vectors, cross product is 0 if vectors are parallel, cross product is positive if vectors are in the counter clockwise direction, negative if vectors are in the clockwise direction
+    if (crossProduct != Fixed(0)) // if cross product is  0 when point is on the line, 
         return false;
-    Fixed dotProduct = (point.getX() - p1.getX()) * (p2.getX() - p1.getX()) + (point.getY() - p1.getY()) * (p2.getY() - p1.getY());
-    if (dotProduct < Fixed(0)) 
+    Fixed dotProduct = (point.getX() - p1.getX()) * (p2.getX() - p1.getX()) + (point.getY() - p1.getY()) * (p2.getY() - p1.getY()); // dot product shows relative position of point to the vector, before or after the vector, it is scalar of two vectors, scalar is projection of one vector to another, scalar is positive if vectors are in the same direction, negative if vectors are in the opposite direction, 0 if vectors are perpendicular
+    if (dotProduct < Fixed(0))
         return false;
-    Fixed squaredLengthBA = (p2.getX() - p1.getX()) * (p2.getX() - p1.getX()) + (p2.getY() - p1.getY()) * (p2.getY() - p1.getY());
-    if (dotProduct > squaredLengthBA) 
+    Fixed squaredLengthBA = (p2.getX() - p1.getX()) * (p2.getX() - p1.getX()) + (p2.getY() - p1.getY()) * (p2.getY() - p1.getY()); // squared length of the vector, squared length is the dot product of the vector with itself, it shows the length of the vector
+    if (dotProduct > squaredLengthBA) // if they are parallel and dot product is greater than squared length of the vector, point is after the vector, projectjon of the point to the vector1 is further than the length of the vector2
         return false;
     return true;
 }

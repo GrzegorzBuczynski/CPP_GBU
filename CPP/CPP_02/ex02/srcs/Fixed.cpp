@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:11:10 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:25:59 by gbuczyns         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Fixed.hpp"
 # include <iostream>
@@ -35,20 +45,15 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-    // Output a message indicating the copy assignment operator is called
     std::cout << "Copy assignment operator called" << std::endl;
     
-    // Check for self-assignment
     if (this != &other)
-        // Copy the value from the other object
         this->_fixedPointValue = other.getRawBits();
-    // Return the current object
     return *this;
 }
 
 int Fixed::getRawBits(void) const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return this->_fixedPointValue;
 }
 

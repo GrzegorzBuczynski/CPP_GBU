@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:08:26 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:08:27 by gbuczyns         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "Point.hpp"
 
 Point::Point() : x(0), y(0) {}
@@ -7,10 +21,8 @@ Point::~Point() {}
 
 Point &Point::operator=(const Point &other)
 {
-    if (this != &other)
+    if (this != &other) 
     {
-        const_cast<Fixed &>(this->x) = other.x;
-        const_cast<Fixed &>(this->y) = other.y;
     }
     return *this;
 }

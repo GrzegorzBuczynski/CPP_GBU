@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:11:01 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:25:42 by gbuczyns         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
@@ -12,12 +22,12 @@ class Fixed
         static const int _fractionalBits = 8;
     public:
         Fixed();
-        Fixed(const int value); // Integer constructor
-        Fixed(const float value); // Float constructor
-        Fixed(const Fixed &other); // Copy constructor
-        ~Fixed(); // Destructor
+        Fixed(const int value);
+        Fixed(const float value);
+        Fixed(const Fixed &other);
+        ~Fixed();
 
-        Fixed &operator=(const Fixed &other); // Copy assignment operator
+        Fixed &operator=(const Fixed &other);
 
         int getRawBits(void) const;
         void setRawBits(int const raw);

@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:23:18 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/03 15:37:19 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:22:08 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int	main(int ac, char **av)
     std::ofstream outputFile((filename + ".replace").c_str());
     if (!outputFile)
     {
-        std::cerr << "Error: Could not create output file " << filename << ".replace" << std::endl;
+        std::cerr << "Error: Could not create output file " << filename;
+        std::cerr << ".replace" << std::endl;
         return 1;
     }
     

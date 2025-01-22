@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:12:43 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:29:25 by gbuczyns         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(const std::string& name)
@@ -7,7 +19,8 @@ ClapTrap::ClapTrap(const std::string& name)
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
-        : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) 
+        : name(other.name), hitPoints(other.hitPoints), 
+            energyPoints(other.energyPoints), attackDamage(other.attackDamage) 
 {
     std::cout << "ClapTrap " << name << " copied!" << std::endl;
 }
