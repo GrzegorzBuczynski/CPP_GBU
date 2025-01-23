@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   ICE.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:19:07 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/22 14:19:08 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/23 16:17:12 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/23 16:18:03 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Ice.hpp"
 
-Brain::Brain() 
-{
-    std::cout << "Brain created" << std::endl;
-}
+Ice::Ice() : AMateria("ice") {}
 
-Brain::Brain(const Brain& other) 
-{
-    *this = other;
-    std::cout << "Brain copied" << std::endl;
-}
+Ice::Ice(Ice const & other) : AMateria(other) {}
 
-Brain& Brain::operator=(const Brain& other) 
+Ice& Ice::operator=(Ice const & other) 
 {
     if (this != &other) 
-    {
-        for (int i = 0; i < 100; ++i) 
-            ideas[i] = other.ideas[i];
-    }
+        AMateria::operator=(other);
     return *this;
 }
 
-Brain::~Brain() 
+Ice::~Ice() {}
+
+AMateria* Ice::clone() const 
 {
-    std::cout << "Brain destroyed" << std::endl;
+    return new Ice(*this);
+}
+
+void Ice::use(ICharacter& target) 
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

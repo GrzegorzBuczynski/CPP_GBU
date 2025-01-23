@@ -5,42 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:19:21 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/22 16:42:30 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/23 16:19:44 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/23 16:33:13 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Animal.hpp"
-# include "Dog.hpp"
-# include "Cat.hpp"
 
+# include "IMateriaSource.hpp"
+# include "MateriaSource.hpp"
+# include "ICharacter.hpp"
+# include "Character.hpp"
+# include "AMateria.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
 
 int main() 
 {
-    const Animal* animals[10];
+    // Create a Materia source
+    IMateriaSource* src = new MateriaSource();
 
-    for (int i = 0; i < 5; ++i) 
-        animals[i] = new Dog();
-    
-    for (int i = 5; i < 10; ++i) 
-        animals[i] = new Cat();
+    // Learn Ice and Cure Materia
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
 
-    for (int i = 0; i < 10; ++i) 
-        delete animals[i];
+    // Create a character named "me"
+    ICharacter* me = new Character("me");
 
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    delete j; 
-    delete i;
+    // Create and equip Ice Materia
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
 
-    //Deep copy test
-    Dog originalDog;
-    Dog copiedDog = originalDog;
-    copiedDog.makeSound();
+    // Create and equip Cure Materia
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
 
-    Cat originalCat;
-    Cat copiedCat = originalCat;
-    copiedCat.makeSound();
+    // Create another character named "bob"
+    ICharacter* bob = new Character("bob");
+
+    // Use the equipped Materia on "bob"
+    me->use(0, *bob);   // Uses Ice Materia
+    me->use(1, *bob);   // Uses Cure Materia
+
+    // Clean up
+    delete bob;
+    delete me;
+    delete src;
 
     return 0;
 }

@@ -6,7 +6,7 @@
 #    By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 17:20:02 by gbuczyns          #+#    #+#              #
-#    Updated: 2025/01/04 18:46:03 by gbuczyns         ###   ########.fr        #
+#    Updated: 2025/01/23 16:21:44 by gbuczyns         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -Iinclude
 RM = rm -f
 
-NAME = ex02
+NAME = ex03
 
 SRCS = $(wildcard srcs/*.cpp)	
 OBJS_DIR = objs
