@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:10:25 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 14:44:45 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/22 14:18:29 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:18:30 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-# include <iostream>
+#ifndef DOG_HPP
+#define DOG_HPP
 
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-int main(void)
+class Dog : public Animal
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
+    private:
+        Brain* brain;
+        
+    public:
+        Dog();
+        Dog(const Dog& other);
+        Dog& operator=(const Dog& other);
+        ~Dog();
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+        void makeSound() const;
+};
 
-    return 0;
-}
+#endif

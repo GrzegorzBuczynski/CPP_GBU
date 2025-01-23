@@ -5,25 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:10:25 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 14:44:45 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/22 14:19:21 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 16:42:30 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-# include <iostream>
+# include "Animal.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
 
 
-int main(void)
+int main() 
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
+    const Animal* animals[10];
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    for (int i = 0; i < 5; ++i) 
+        animals[i] = new Dog();
+    
+    for (int i = 5; i < 10; ++i) 
+        animals[i] = new Cat();
+
+    for (int i = 0; i < 10; ++i) 
+        delete animals[i];
+
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j; 
+    delete i;
+
+    //Deep copy test
+    Dog originalDog;
+    Dog copiedDog = originalDog;
+    copiedDog.makeSound();
+
+    Cat originalCat;
+    Cat copiedCat = originalCat;
+    copiedCat.makeSound();
 
     return 0;
 }

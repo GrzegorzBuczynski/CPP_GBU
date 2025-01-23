@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:10:25 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 14:44:45 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/22 14:18:24 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:18:26 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-# include <iostream>
+#ifndef CAT_HPP
+#define CAT_HPP
 
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-int main(void)
+class Cat : public Animal
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
+    private:
+        Brain* brain;
+        
+    public:
+        Cat();
+        Cat(const Cat& other);
+        Cat& operator=(const Cat& other);
+        ~Cat();
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+        void makeSound() const;
+    
+};
 
-    return 0;
-}
+#endif

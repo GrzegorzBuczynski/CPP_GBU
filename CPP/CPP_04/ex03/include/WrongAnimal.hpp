@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:11:34 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 14:45:56 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/22 14:18:37 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:18:38 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-#define POINT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include "Fixed.hpp"
+#include <iostream>
+#include <string>
 
-class Point
+class WrongAnimal
 {
-    private:
-        const Fixed x;
-        const Fixed y;
+    protected:
+        std::string type;
+        
     public:
-        Point();
-        Point(const float x, const float y);
-        Point(const Point &other);
-        ~Point();
-        Point &operator=(const Point &other);
-
-        Fixed getX() const;
-        Fixed getY() const;
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal& other);
+        WrongAnimal& operator=(const WrongAnimal& other);
+        virtual ~WrongAnimal();
+        
+        std::string getType() const;
+        void makeSound() const;
 };
-
-bool bsp(const Point a, const Point b, const Point c, const Point point);
 
 #endif

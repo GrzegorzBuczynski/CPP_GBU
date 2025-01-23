@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 14:10:25 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 14:44:45 by gbuczyns         ###   ########.fr       */
+/*   Created: 2025/01/22 14:18:20 by gbuczyns          #+#    #+#             */
+/*   Updated: 2025/01/22 14:18:21 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-# include <iostream>
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
+#include <iostream>
+#include <string>
 
-int main(void)
+class Brain
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
+    public:
+        std::string ideas[100];
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+        Brain();
+        Brain(const Brain& other);
+        Brain& operator=(const Brain& other);
+        ~Brain();
+};
 
-    return 0;
-}
+#endif
