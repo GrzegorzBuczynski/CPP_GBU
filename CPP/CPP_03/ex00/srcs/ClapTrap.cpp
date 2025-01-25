@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:12:12 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/22 14:29:02 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/25 17:08:34 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void ClapTrap::attack(const std::string &target)
         std::cout << " points of damage!" << std::endl;
     }
     else
-        std::cout << "ClapTrap " << name << " cannot attack ";
-        std::cout << target << "!" << std::endl;
+    {   std::cout << "ClapTrap " << name << " cannot attack ";
+        std::cout << target << "!" << std::endl;}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

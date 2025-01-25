@@ -6,7 +6,7 @@
 /*   By: gbuczyns <gbuczyns@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 16:21:55 by gbuczyns          #+#    #+#             */
-/*   Updated: 2025/01/23 16:21:56 by gbuczyns         ###   ########.fr       */
+/*   Updated: 2025/01/25 17:04:16 by gbuczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Ice : public AMateria
         ~Ice();
 
         AMateria *clone() const;
-        void use(ICharacter &target);
+        void use(ICharacter& target);
 };
 
 #endif
